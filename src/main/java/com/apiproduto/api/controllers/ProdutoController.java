@@ -17,7 +17,7 @@ public class ProdutoController {
 
     @GetMapping("/")
     public String listarProdutos(Model model) {
-        model.addAttribute("todosOdProdutos", repository.findAll());
+        model.addAttribute("todosOsProdutos", repository.findAll());
         return "listar";
     }
 
@@ -30,6 +30,6 @@ public class ProdutoController {
     @PostMapping("/cadastro")
     public String cadastrarProdutos(Produto produto) {
         repository.save(produto);
-        return "cadastrar";
+        return "redirect:/";
     }
 }
